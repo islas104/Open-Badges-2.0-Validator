@@ -61,6 +61,15 @@ Navigate to http://localhost:3000.
 
 - The application will extract the metadata (if applicable), validate it, and display a flash message indicating whether the badge is valid, along with the metadata details.
 
+## Badges Folder
+
+- The repository includes a badges folder containing two JSON files:
+
+A valid badge JSON file.
+An invalid badge JSON file (for testing error cases).
+
+Note: The valid badge JSON example is based on the official Open Badges 2.0 specification. You can find the specification and example JSON at [https://www.imsglobal.org/sites/default/files/Badges/OBv2p0Final/index.html]
+
 ## Testing
 
 This project includes RSpec tests for the validation logic. To run the tests, execute:
