@@ -1,0 +1,42 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+// Custom Styles
+
+body {
+  background-color: #f1f3f5; /* Light gray background */
+}
+
+.btn-primary {
+  background-color: #0069d9; /* Brand color */
+  border-color: #0062cc;
+}
+
+h1 {
+  color: #343a40;
+  margin-bottom: 1.5rem;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Alert styling */
+.alert {
+  font-size: 0.9rem;
+}
+
+/* Input group styling */
+.input-group-text {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+/* Container spacing */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

@@ -1,0 +1,57 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-12">
+      <h1 class="text-center">Open Badges 2.0 Validator</h1>
+      
+      <div class="card p-4 mt-4">
+        <%= form_with url: badge_validations_validate_path, local: true, multipart: true do |f| %>
+          <div class="mb-3">
+            <label class="form-label fw-bold">Badge URL</label>
+            <p class="text-muted small">
+              Paste the URL of a hosted badge, its JSON, or a cryptographic signature.
+            </p>
+            <%= f.text_field :badge_url, placeholder: "https://api.example.com/assertions/abc123", class: "form-control" %>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label fw-bold">Or Upload Badge File</label>
+            <p class="text-muted small">
+              Upload a JSON file or an image (PNG) that may have baked Open Badges metadata.
+            </p>
+            <%= f.file_field :badge_file, class: "form-control" %>
+          </div>
+          
+          <div class="mb-4">
+            <label class="form-label fw-bold">
+              Verify Recipient <small class="text-muted">(optional)</small>
+            </label>
+            <p class="text-muted small">
+              Optionally verify that the badge was awarded to a specific email address.
+            </p>
+            <div class="input-group">
+              <span class="input-group-text">email</span>
+              <%= text_field_tag :recipient_email, nil, placeholder: "test@example.com", class: "form-control" %>
+            </div>
+            <button type="button" class="btn btn-outline-secondary btn-sm mt-2">Add Another</button>
+          </div>
+          
+          <div class="text-end">
+            <%= f.submit "VERIFY", class: "btn btn-primary px-4" %>
+          </div>
+        <% end %>
+      </div>
+      
+      <% if flash[:notice] %>
+        <div class="alert alert-success mt-4">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      
+      <% if flash[:error] %>
+        <div class="alert alert-danger mt-4">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
